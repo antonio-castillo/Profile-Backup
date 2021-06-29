@@ -63,6 +63,16 @@ namespace Profile_Backup.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap floppy_disk_emoji_by_google {
+            get {
+                object obj = ResourceManager.GetObject("floppy-disk-emoji-by-google", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap profile1 {
             get {
                 object obj = ResourceManager.GetObject("profile1", resourceCulture);
