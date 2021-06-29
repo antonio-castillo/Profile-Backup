@@ -64,6 +64,73 @@ namespace Profile_Backup
 
         }
 
+
+
+
+      /*  static float GetDirectorySize(string p)
+        {
+            DirectoryInfo dirP = new DirectoryInfo(p);
+            float b = 0;
+            try
+            {
+                foreach (var fi in dirP.EnumerateFiles())
+                {
+                    try
+                    {
+                        b += fi.Length;
+                    }
+                    catch (UnauthorizedAccessException e)
+                    {
+                        //   Debug.WriteLine($"{e.Message}");
+                    }
+                }
+
+                foreach (var di in dirP.EnumerateDirectories("*"))
+                {
+                    try
+                    {
+                        foreach (var fi in di.EnumerateFiles("*", SearchOption.AllDirectories))
+                        {
+                            try
+                            {
+                                b += fi.Length;
+                            }
+                            catch (UnauthorizedAccessException e)
+                            {
+                                //   Debug.WriteLine($"{e.Message}");
+                            }
+                        }
+                    }
+                    catch (UnauthorizedAccessException e)
+                    {
+                        //  Debug.WriteLine($"{e.Message}");
+                    }
+                }
+            }
+            catch (UnauthorizedAccessException e)
+            {
+                //  Debug.WriteLine($"{e.Message}");
+            }
+
+
+            //    Debug.WriteLine(b);
+            //   Debug.WriteLine(bb.ToString());
+
+            return b;
+
+        }
+      */
+
+
+
+
+
+
+
+
+
+
+
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/antonio-castillo");
