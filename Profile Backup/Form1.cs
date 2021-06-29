@@ -45,7 +45,7 @@ namespace Profile_Backup
 
             Process p = new Process();
             // p.StartInfo.Arguments = string.Format("/C Robocopy /s /v /w:1 /r:1 /is /it",  "%userprofile%", "%username%");
-            p.StartInfo.Arguments = string.Format("/C robocopy C:\\prueba %username% /s /v /w:1 /r:1 /is /it");
+            p.StartInfo.Arguments = string.Format("/C robocopy %userprofile% %username% /s /v /w:1 /r:1 /is /it");
            // p.StartInfo.Arguments = string.Format("/C robocopy %userprofile% %username% /s /v /w:1 /r:1 /is /it");
             p.StartInfo.FileName = "CMD.EXE";
             p.StartInfo.CreateNoWindow = true;
