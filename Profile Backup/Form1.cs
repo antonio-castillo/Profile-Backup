@@ -40,6 +40,9 @@ namespace Profile_Backup
         private void button1_Click(object sender, EventArgs e)
         {
 
+            showMessage("This process may take a while \n Please, don't close the application \n This message will close automatically in 4 seconds", 4000);  /* 1 segundo = 1000 */
+
+
             bool active = true;
             progressBar1.Value = 0;
 
@@ -66,68 +69,27 @@ namespace Profile_Backup
 
 
 
-
-      /*  static float GetDirectorySize(string p)
+        private void timeTick(object sender, EventArgs e)
         {
-            DirectoryInfo dirP = new DirectoryInfo(p);
-            float b = 0;
-            try
-            {
-                foreach (var fi in dirP.EnumerateFiles())
-                {
-                    try
-                    {
-                        b += fi.Length;
-                    }
-                    catch (UnauthorizedAccessException e)
-                    {
-                        //   Debug.WriteLine($"{e.Message}");
-                    }
-                }
-
-                foreach (var di in dirP.EnumerateDirectories("*"))
-                {
-                    try
-                    {
-                        foreach (var fi in di.EnumerateFiles("*", SearchOption.AllDirectories))
-                        {
-                            try
-                            {
-                                b += fi.Length;
-                            }
-                            catch (UnauthorizedAccessException e)
-                            {
-                                //   Debug.WriteLine($"{e.Message}");
-                            }
-                        }
-                    }
-                    catch (UnauthorizedAccessException e)
-                    {
-                        //  Debug.WriteLine($"{e.Message}");
-                    }
-                }
-            }
-            catch (UnauthorizedAccessException e)
-            {
-                //  Debug.WriteLine($"{e.Message}");
-            }
-
-
-            //    Debug.WriteLine(b);
-            //   Debug.WriteLine(bb.ToString());
-
-            return b;
-
+            (sender as Timer).Stop();  /* Detiene el Timer */
+            SendKeys.Send("{ESC}"); /* Hace la simulación de la tecla Escape, también puedes usar {ENTER} */
         }
-      */
 
 
+        private void showMessage(string msg, int duration)
+        {
+            using (Timer t = new Timer())
+            {
+                Timer time = new Timer();
+                time.Interval = duration;
+                time.Tick += timeTick;  /* Evento enlazado */
 
+                time.Start();
 
-
-
-
-
+                /* Muestras el texto en el MB */
+                MessageBox.Show(msg);
+            }
+        }
 
 
 
